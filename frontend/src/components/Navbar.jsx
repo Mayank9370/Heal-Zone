@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { assets } from "../assets/assets";
 import { NavLink, useNavigate } from "react-router-dom";
+import { Menu, X, User, Calendar, LogOut, Stethoscope, Shield, Bell } from "lucide-react";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -10,7 +11,21 @@ const Navbar = () => {
 
   return (
     <div className="flex items-center justify-between text-sm py-4 mb-5 border-b border-b-gray-400">
-      <img onClick={()=>navigate('/')} className="w-44 cursor-pointer" src={assets.logo} alt="Loading" />
+      
+          {/* Logo */}
+          <div 
+            onClick={() => navigate('/')} 
+            className="flex items-center gap-3 cursor-pointer group"
+          >
+            <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl group-hover:scale-110 transition-transform duration-300">
+              <Stethoscope className="h-6 w-6 text-white" />
+            </div>
+            <div className="hidden sm:block">
+              <h1 className="text-xl font-bold text-gray-900">Heal Zone</h1>
+              <p className="text-xs text-gray-500">Trusted Healthcare</p>
+            </div>
+          </div>
+      {/* <img onClick={()=>navigate('/')} className="w-44 cursor-pointer" src={assets.logo} alt="Loading" /> */}
       <ul className="hidden md:flex intems-start gap-5 font-medium">
         <NavLink to="/">
           <li className="py-1">Home</li>

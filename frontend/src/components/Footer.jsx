@@ -1,5 +1,6 @@
 import React from 'react';
 import { assets } from '../assets/assets';
+import { Menu, X, User, Calendar, LogOut, Stethoscope, Shield, Bell } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -7,8 +8,21 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between gap-10">
         {/* Left Side */}
         <div className="flex-1">
-          <img src={assets.logo} alt="Logo" className="h-10 mb-4" />
-          <p className="text-gray-600 text-sm">
+                    {/* Logo */}
+          <div 
+            onClick={() => navigate('/')} 
+            className="flex items-center gap-3 cursor-pointer group"
+          >
+            <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl group-hover:scale-110 transition-transform duration-300">
+              <Stethoscope className="h-6 w-6 text-white " />
+            </div>
+            <div className="hidden sm:block ">
+              <h1 className="text-xl font-bold text-gray-900 ">Heal Zone</h1>
+              <p className="text-xs text-gray-500 ">Trusted Healthcare</p>
+            </div>
+          </div>
+          {/* <img src={assets.logo} alt="Logo" className="h-10 mb-4" /> */}
+          <p className="text-gray-600 text-sm h-10 mt-4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nostrum culpa velit blanditiis tenetur hic aliquam, necessitatibus itaque dolorum deserunt? Accusamus non ab, id unde hic sed quisquam mollitia provident.
           </p>
         </div>
